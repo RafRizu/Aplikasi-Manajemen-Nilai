@@ -93,7 +93,7 @@
 
     <input type="text" name="cari" placeholder="Masukkan Kata Kunci" id="" required="required">
     <select name="berdasarkan" id="">
-      <option value="nip">NIM</option>
+      <option value="nim">NIM</option>
       <option value="nama_mhs">Nama</option>
     </select>
     <input type="submit" class="btn btn-sm btn-primary" value="Cari">
