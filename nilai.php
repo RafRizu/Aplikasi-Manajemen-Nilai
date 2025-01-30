@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Aplikasi Nilai</a>
+    <a class="navbar-brand" href="#">Aplikasi Nilai</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,17 +19,23 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="index.php">Home</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Master Data
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="mahasiswa.php">Data Mahasiswa</a></li>
-            <li><a class="dropdown-item" href="matkul.php">Data Mata Kuliah</a></li>
-            <li><a class="dropdown-item" href="dosen.php">Data Dosen</a></li>
-            <li><a class="dropdown-item" href="nilai.php">Data Nilai</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="mahasiswa.php">Data Mahasiswa</a>
+          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="matkul.php">Data Mata Kuliah</a>
+          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dosen.php">Data Dosen</a>
+          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="nilai.php">Data Nilai</a>
+          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
+        </li>
+
       </ul>
     </div>
   </div>
