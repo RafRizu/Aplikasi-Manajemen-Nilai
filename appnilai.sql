@@ -53,7 +53,7 @@ CREATE TABLE `mahasiswa` (
 --
 
 CREATE TABLE `matakuliah` (
-  `kode_mk` varchar(6) NOT NULL,
+  `kode_mk` varchar(9) NOT NULL,
   `nama_mk` varchar(20) NOT NULL,
   `sks` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

@@ -68,7 +68,7 @@
         $urutan = (int) substr($maxvalue,7,7);
         $urutan++;
 
-        $maxnilai = $tahun.sprintf('%04s',$urutan);
+        $maxnilai = "MK-".sprintf('%04s',$urutan);
     ?>
     <input type="text" name="kode_mk" readonly value="<?php echo $maxnilai ?>" id="" required="required" class="form-control">
     <label for="">Nama Mata Kuliah</label>
