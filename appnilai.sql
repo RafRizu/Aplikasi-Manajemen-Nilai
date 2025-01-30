@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2023 at 07:50 AM
+-- Generation Time: Jan 30, 2025 at 09:20 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,11 +32,6 @@ CREATE TABLE `dosen` (
   `nama_dosen` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `dosen`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -51,11 +46,6 @@ CREATE TABLE `mahasiswa` (
   `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `mahasiswa`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -63,15 +53,10 @@ CREATE TABLE `mahasiswa` (
 --
 
 CREATE TABLE `matakuliah` (
-  `kode_mk` varchar(8) NOT NULL,
+  `kode_mk` varchar(6) NOT NULL,
   `nama_mk` varchar(20) NOT NULL,
   `sks` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `matakuliah`
---
-
 
 -- --------------------------------------------------------
 
@@ -98,16 +83,12 @@ CREATE TABLE `nilai` (
 --
 
 CREATE TABLE `perkuliahan` (
+  `id` int(11) NOT NULL,
   `nim` varchar(9) NOT NULL,
   `kode_mk` varchar(7) NOT NULL,
   `nip` varchar(12) NOT NULL,
   `nilai` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `perkuliahan`
---
-
 
 -- --------------------------------------------------------
 
@@ -144,9 +125,20 @@ ALTER TABLE `matakuliah`
 -- Indexes for table `perkuliahan`
 --
 ALTER TABLE `perkuliahan`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `nim` (`nim`),
   ADD KEY `kode_mk` (`kode_mk`),
   ADD KEY `nip` (`nip`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `perkuliahan`
+--
+ALTER TABLE `perkuliahan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
