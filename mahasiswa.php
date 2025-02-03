@@ -3,43 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-      <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Aplikasi Nilai</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Aplikasi Nilai</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mahasiswa.php">Data Mahasiswa</a>
-          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="matkul.php">Data Mata Kuliah</a>
-          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="dosen.php">Data Dosen</a>
-          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nilai.php">Data Nilai</a>
-          <!-- <a class="nav-link" aria-current="page" href="#">Home</a> -->
-        </li>
+<nav style="background: linear-gradient(#0062ff, #6a9cee);" class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="index.php">Aplikasi Penilaian</a>
+        <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="button-1 rounded nav-link text-white" aria-current="page" href="index.php">Home</a>
+            </li>
+            <li class="nav-item ms-1">
+              <a class="button-1 rounded nav-link text-white" href="mahasiswa.php">Data Mahasiswa</a>
+            </li>
+            <li class="nav-item ms-1">
+              <a class="button-1 rounded nav-link text-white" href="matkul.php">Data Mata Kuliah</a>
+            </li>
+            <li class="nav-item ms-1">
+              <a class="button-1 rounded nav-link text-white" href="dosen.php">Data Dosen</a>
+            </li>
+            <li class="nav-item ms-1">
+              <a class="button-1 rounded nav-link text-white" href="nilai.php">Data Penilaian</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-      </ul>
-    </div>
-  </div>
-</nav>
 <div class="ms-4 mt-3 col-4">
   <h3>Tambah Data Mahasiswa</h3>
   <?php 
