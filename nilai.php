@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <!-- CSS Select2 -->
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  
+
   <!-- jQuery (Wajib) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  
+
   <!-- JS Select2 -->
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -133,12 +133,60 @@
         <input type="submit" class="btn btn-sm btn-primary" value="Cari">
       </form>
     </div>
+    <!-- Cetak -->
+    <div>
+      <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Cetak nilai</button>
+    </div>
+    <!-- modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Pilih Nilai Yang Dicetak</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="cetak.php" method="post">
+              <label for="">Pilih Semester</label>
+              <select name="semester" id="" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+              </select>
+              <label for="">Pilih Prodi</label>
+              <select name="prodi" id="" class="form-control">
+                <option value="TI">TI</option>
+                <option value="DKV">DKV</option>
+                <option value="SI">SI</option>
+                <option value="MI">MI</option>
+                <option value="MB">MB</option>
+                <option value="MNJ">MNJ</option>
+                <option value="AK">AK</option>
+              </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <input type="submit" value="Cetak" class="btn btn-primary"></input>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <table class="table table-striped table-bordered mt-3">
       <tr>
         <thead>
           <th>No</th>
           <th>NIM</th>
           <th>Nama Mahasiswa</th>
+          <th>Prodi</th>
+          <th>Semester</th>
           <th>Jenis Kelamin</th>
           <th>Nama Mata Kuliah</th>
           <th>Jumlah SKS</th>
@@ -171,6 +219,8 @@
             <td><?php echo $no++ ?></td>
             <td><?php echo $d['nim'] ?></td>
             <td><?php echo $d['nama'] ?></td>
+            <td><?php echo $d['prodi'] ?></td>
+            <td><?php echo $d['semester'] ?></td>
             <td><?php echo $d['jk'] ?></td>
             <td><?php echo $d['matkul'] ?></td>
             <td><?php echo $d['sks'] ?></td>

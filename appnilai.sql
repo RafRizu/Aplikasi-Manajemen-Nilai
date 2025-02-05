@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2025 at 09:20 AM
+-- Generation Time: Feb 05, 2025 at 05:19 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,6 +41,8 @@ CREATE TABLE `dosen` (
 CREATE TABLE `mahasiswa` (
   `nim` varchar(9) NOT NULL,
   `nama_mhs` varchar(25) NOT NULL,
+  `prodi` varchar(255) NOT NULL,
+  `semester` varchar(255) NOT NULL,
   `tgl_lahir` date NOT NULL DEFAULT current_timestamp(),
   `alamat` varchar(50) NOT NULL,
   `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL
@@ -67,9 +69,11 @@ CREATE TABLE `matakuliah` (
 CREATE TABLE `nilai` (
 `nim` varchar(9)
 ,`nama` varchar(25)
+,`prodi` varchar(255)
+,`semester` varchar(255)
 ,`jk` enum('Laki-laki','Perempuan')
 ,`matkul` varchar(20)
-,`kode_mk` varchar(6)
+,`kode_mk` varchar(9)
 ,`sks` int(2)
 ,`nip` varchar(12)
 ,`dosen` varchar(25)
@@ -90,6 +94,13 @@ CREATE TABLE `perkuliahan` (
   `nilai` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `perkuliahan`
+--
+
+INSERT INTO `perkuliahan` (`id`, `nim`, `kode_mk`, `nip`, `nilai`) VALUES
+(2, '20250001', 'MK-0001', '001', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -97,7 +108,7 @@ CREATE TABLE `perkuliahan` (
 --
 DROP TABLE IF EXISTS `nilai`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `nilai`  AS SELECT `mahasiswa`.`nim` AS `nim`, `mahasiswa`.`nama_mhs` AS `nama`, `mahasiswa`.`jenis_kelamin` AS `jk`, `matakuliah`.`nama_mk` AS `matkul`, `matakuliah`.`kode_mk` AS `kode_mk`, `matakuliah`.`sks` AS `sks`, `dosen`.`nip` AS `nip`, `dosen`.`nama_dosen` AS `dosen`, `perkuliahan`.`nilai` AS `nilai` FROM (((`perkuliahan` join `mahasiswa` on(`mahasiswa`.`nim` = `perkuliahan`.`nim`)) join `matakuliah` on(`matakuliah`.`kode_mk` = `perkuliahan`.`kode_mk`)) join `dosen` on(`dosen`.`nip` = `perkuliahan`.`nip`))  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `nilai`  AS SELECT `mahasiswa`.`nim` AS `nim`, `mahasiswa`.`nama_mhs` AS `nama`, `mahasiswa`.`prodi` AS `prodi`, `mahasiswa`.`semester` AS `semester`, `mahasiswa`.`jenis_kelamin` AS `jk`, `matakuliah`.`nama_mk` AS `matkul`, `matakuliah`.`kode_mk` AS `kode_mk`, `matakuliah`.`sks` AS `sks`, `dosen`.`nip` AS `nip`, `dosen`.`nama_dosen` AS `dosen`, `perkuliahan`.`nilai` AS `nilai` FROM (((`perkuliahan` join `mahasiswa` on(`mahasiswa`.`nim` = `perkuliahan`.`nim`)) join `matakuliah` on(`matakuliah`.`kode_mk` = `perkuliahan`.`kode_mk`)) join `dosen` on(`dosen`.`nip` = `perkuliahan`.`nip`))  ;
 
 --
 -- Indexes for dumped tables
@@ -138,7 +149,7 @@ ALTER TABLE `perkuliahan`
 -- AUTO_INCREMENT for table `perkuliahan`
 --
 ALTER TABLE `perkuliahan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

@@ -75,6 +75,27 @@
     <input type="text" name="nim" id="" value="<?php echo $maxnilai ?>" readonly required="required" class="form-control">
     <label for="">Nama Mahasiswa</label>
     <input type="text" name="nama_mhs" required="required" id="" class="form-control">
+    <label for="">Prodi</label>
+    <select name="prodi" id="" class="form-control">
+      <option value="TI">TI</option>
+      <option value="DKV">DKV</option>
+      <option value="SI">SI</option>
+      <option value="MI">MI</option>
+      <option value="MB">MB</option>
+      <option value="MNJ">MNJ</option>
+      <option value="AK">AK</option>
+    </select>
+    <label for="">Semester</label>
+    <select name="semester" id="" class="form-control">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+    </select>
     <label for="">Tanggal Lahir</label>
     <input type="date" name="tgl_lahir" required="required" id="" class="form-control">
     <label for="">Alamat</label>
@@ -107,6 +128,8 @@
               <th>No</th>
               <th>NIM</th>
               <th>Nama Mahasiswa</th>
+              <th>Prodi</th>
+              <th>Semester</th>
               <th>Tanggal lahir</th>
               <th>Alamat</th>
               <th>Jenis Kelamin</th>
@@ -137,6 +160,8 @@ while ($d = mysqli_fetch_array($query)) {
           <td><?php echo $no++ ?></td>
           <td><?php echo $d['nim'] ?></td>
           <td><?php echo $d['nama_mhs'] ?></td>
+          <td><?php echo $d['prodi'] ?></td>
+          <td><?php echo $d['semester'] ?></td>
           <td><?php echo $d['tgl_lahir'] ?></td>
           <td><?php echo $d['alamat'] ?></td>
           <td><?php echo $d['jenis_kelamin'] ?></td>
