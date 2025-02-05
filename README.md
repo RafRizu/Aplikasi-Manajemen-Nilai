@@ -21,4 +21,4 @@ Aplikasi berbasis web untuk mengelola nilai siswa/mahasiswa secara efisien. Diba
 ## Instalasi
 1. **Clone repositori**:
    ```bash
-   git clone https://github.com/RafRizu/app-nilai.git
+   git clone https://github.com/RafRizu/Aplikasi-Manajemen-Nilai.git
