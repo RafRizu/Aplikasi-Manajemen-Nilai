@@ -1,5 +1,13 @@
 <?php
 include "koneksi.php";
+session_start();
+if ($_SESSION['status'] != true) {
+    header("location:login.php");
+    # code...
+}
+?>
+<?php
+include "koneksi.php";
 $kode_mk = $_POST['kode_mk'];
 $nama_mk = $_POST['nama_mk'];
 $sks = $_POST['sks'];

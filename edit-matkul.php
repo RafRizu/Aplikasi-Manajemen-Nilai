@@ -1,3 +1,11 @@
+<?php
+include "koneksi.php";
+session_start();
+if ($_SESSION['status'] != true) {
+  header("location:login.php");
+  # code...
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +38,9 @@
             </li>
             <li class="nav-item ms-1">
               <a class="button-1 rounded nav-link text-white" href="nilai.php">Data Penilaian</a>
+            </li>
+            <li class="nav-item ms-1">
+              <a class="button-1 rounded nav-link text-white" href="logout.php">Logout</a>
             </li>
           </ul>
         </div>

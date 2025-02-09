@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2025 at 05:19 AM
+-- Generation Time: Feb 09, 2025 at 06:45 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.12
 
@@ -94,12 +94,24 @@ CREATE TABLE `perkuliahan` (
   `nilai` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `perkuliahan`
+-- Table structure for table `users`
 --
 
-INSERT INTO `perkuliahan` (`id`, `nim`, `kode_mk`, `nip`, `nilai`) VALUES
-(2, '20250001', 'MK-0001', '001', 'A');
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`) VALUES
+(1, 'admin', '11111111');
 
 -- --------------------------------------------------------
 
@@ -142,6 +154,12 @@ ALTER TABLE `perkuliahan`
   ADD KEY `nip` (`nip`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -150,6 +168,12 @@ ALTER TABLE `perkuliahan`
 --
 ALTER TABLE `perkuliahan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
